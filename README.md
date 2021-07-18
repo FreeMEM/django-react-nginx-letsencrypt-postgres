@@ -5,21 +5,19 @@ Soy desarrollador y administrador de sistemas Linux de la vieja escuela y siempr
 
 La infraestructura está formada por Django Rest Framework (DRF), React, proxy Nginx + let's encrypt y Postgres como base de datos. Está diseñado para dos stages, uno de devolopment/local y otro de producción.
 
+También he decidido escribir esta guía/herramienta en mi lengua materna ya que hay bastante menos ayuda sobre este tema en mi idioma que en inglés y si con mi trabajo puedo ayudar a otros, mejor que mejor.
 
+## Características
 
-## Features (already implemented or planned)
-
-- Backend with Django Rest Framework
-- Frontend with React 
+- Backend con Django Rest Framework
+- Frontend con React 
 - Deployment with docker-compose on VPS
 - SSL certificate from Let's encrypt
 - PostgreSQL database (not yet configured)
 - Authentication with JWT
+- Swagger docs support
 
-## Live Website
-
-
-## Step-by-step instructions:
+## Instrucciones paso a paso
 
 
 ## Screenshots
