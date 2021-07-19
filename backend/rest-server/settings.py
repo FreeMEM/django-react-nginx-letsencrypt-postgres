@@ -3,9 +3,14 @@
 import environ
 
 ROOT_DIR = environ.Path(__file__) - 3
-APPS_DIR = ROOT_DIR.path("backend")
-
+# APPS_DIR = ROOT_DIR.path("backend")
 env = environ.Env()
+
+
+from pathlib import Path
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Base
 DEBUG = env.bool("DJANGO_DEBUG", False)
@@ -94,28 +99,34 @@ CORS_ORIGIN_WHITELIST = [
 ]
 
 # Static files
-STATIC_ROOT = str(ROOT_DIR("staticfiles"))
-STATIC_URL = "/static/"
-STATICFILES_DIRS = [
-    str(APPS_DIR.path("static")),
-]
+# STATIC_ROOT = str(ROOT_DIR("staticfiles"))
+# STATIC_URL = "/static/"
+# STATICFILES_DIRS = [
+#     str(APPS_DIR.path("static")),
+# ]
 
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
-# Media
-MEDIA_ROOT = str(APPS_DIR("media"))
+# # Media
+# MEDIA_ROOT = str(APPS_DIR("media"))
+# MEDIA_URL = "/media/"
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/3.1/howto/static-files/
+
 MEDIA_URL = "/media/"
+STATIC_URL = "/django_static/"
+STATIC_ROOT = BASE_DIR / "django_static"
+
 
 # Templates
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [
-            str(APPS_DIR.path("templates")),
-        ],
+        "DIRS": [],
         "OPTIONS": {
             "debug": DEBUG,
             "loaders": [
